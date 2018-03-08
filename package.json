@@ -25,6 +25,7 @@
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
     "sequelize": "^4.35.1",
+    "uglifyjs-webpack-plugin": "^1.2.2",
     "webpack": "^3.11.0"
   }
 }

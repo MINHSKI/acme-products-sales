@@ -1,7 +1,17 @@
 const path = require('path');
-console.log(process.env);
-module.exports = {
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+
+const prod = {
+  plugins: [
+    new UglifyJsPlugin()
+  ],
+};
+
+const dev = {
   devtool: 'source-maps',
+}
+
+const _export = {
   entry: './src/index.js',
   output: {
     path: path.join(__dirname, 'dist'),
@@ -20,3 +30,12 @@ module.exports = {
     ]
   }
 };
+
+
+
+if(process.env.NODE_ENV === 'PROD'){
+  module.exports = Object.assign({}, _export, prod);
+}
+else {
+  module.exports = Object.assign({}, _export, dev);
+}
