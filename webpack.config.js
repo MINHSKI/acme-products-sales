@@ -1,5 +1,7 @@
 const path = require('path');
+console.log(process.env);
 module.exports = {
+  devtool: 'source-maps',
   entry: './src/index.js',
   output: {
     path: path.join(__dirname, 'dist'),
